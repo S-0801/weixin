@@ -174,7 +174,15 @@ def send_message(to_user, access_token, region_name, weather, temp, wind_dir, no
                 "color": get_color()
             },
             "c1": {
-                "value": "计算机网络",
+                "value": "计算机网络  [11-203]",
+                "color": get_color()
+            },
+            "c2": {
+                "value": "移动开发技术  [7-102]",
+                "color": get_color()
+            },
+            "c3": {
+                "value": "机器学习B  [11-101]",
                 "color": get_color()
             }
         }
