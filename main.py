@@ -135,6 +135,30 @@ def send_message(to_user, access_token, region_name, weather, temp, wind_dir, no
     for k, v in config.items():
         if k[0:5] == "birth":
             birthdays[k] = v
+        
+    #课表判断
+
+    c1 = ""
+    c2 = ""
+    c3 = ""
+    c4 = ""
+    c5 = ""
+    if week == "星期一":
+        c1 = "8:00~9:40 ： 计算机网络  [11-203]"
+        c3 = "14:00~15:35 : 移动开发技术  [7-102]"
+    if week == "星期二":
+        c3 = "14:30~16:05 : javaweb高级  [10-508]"
+        c4 = "16:25~18:05 : 计算机组成原理  [11-203]"
+        c5 = "19:30~21:00 : 机器学习  [11-101]"
+    if week == "星期三":
+        c2 = "10:00~11:40 : 移动开发技术  [11-203]"
+        c3 = "14:30~16:05 : 形势与政策  [10-210]"
+    if week == "星期四":
+        c2 = "10:00~11:40 : 计算机网络  [11-203]"
+    if week == "星期五":
+        c2 = "10:00~11:40 : javaweb高级  [10-508]"
+        c3 = "14:30~16:05 : 计算机组成原理  [11-203]"
+       
     data = {
         "touser": to_user,
         "template_id": config["template_id"],
@@ -174,15 +198,23 @@ def send_message(to_user, access_token, region_name, weather, temp, wind_dir, no
                 "color": get_color()
             },
             "c1": {
-                "value": "计算机网络  [11-203]",
+                "value": c1,
                 "color": get_color()
             },
             "c2": {
-                "value": "移动开发技术  [7-102]",
+                "value": c2,
                 "color": get_color()
             },
             "c3": {
-                "value": "机器学习B  [11-101]",
+                "value": c3,
+                "color": get_color()
+            },
+            "c4": {
+                "value": c4,
+                "color": get_color()
+            },
+            "c5": {
+                "value": c5,
                 "color": get_color()
             }
         }
